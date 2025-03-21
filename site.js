@@ -11,7 +11,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 ;(async () => {
 
 	// getNextQuestion will fetch, parse, and return the next question
-	async function getNextQuestion(){
+	const getNextQuestion = async()=>{
 		const url = 'https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple'
 		const response = await fetch(url);
 		const json=await response.json()
@@ -21,7 +21,7 @@ const nextQuestionElement = document.querySelector('#nextQuestion')
 	}
 
 	// renderQuestion renders the question and answers in html
-	function renderQuestion({question,answers,correct}){
+	const renderQuestion= async({question,answers,correct})=>{
 		questionElement.textContent = decodeHtml(question)
 		answersElement.innerHTML =''
 
